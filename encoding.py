@@ -9,7 +9,7 @@ class Encoder:
     interval = 175 
 
     @memory.cache
-    def encodeToMorse(message):
+    def encodeToMorse(self, message, *args):
         encodedMessage = ''
         charFound = True
         for char in message[:]:

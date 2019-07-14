@@ -21,7 +21,7 @@ class PlayThread (threading.Thread):
         
     def run(self):
         gui.button_sd.configure(state = 'disabled')
-        encoder.play_text(gui.text_view.get('1.0','end-1c'))
+        encoder.play_text(gui.text_view.get('1.0', 'end-1c'))
         gui.button_sd.configure(state = 'active')
         
 class UI:
@@ -70,13 +70,13 @@ class UI:
     def button_pressed_encode(self):
         self.text_view.configure(state = 'normal')
         self.text_view.delete('1.0', 'end-1c')
-        self.text_view.insert('1.0', encoder.encodeToMorse(self.ent1.get('1.0', 'end-1c')))
+        self.text_view.insert('1.0', encoder.encodeToMorse(encoder, self.ent1.get('1.0', 'end-1c')))
         self.text_view.configure(state = 'disabled')
         
     def button_pressed_decode(self):
         self.text_view2.configure(state = 'normal')
         self.text_view2.delete('1.0', 'end-1c')
-        self.text_view2.insert('1.0', decoder.decodeMorse(self.ent2.get('1.0', 'end-1c'), self.lang_ch.get()))
+        self.text_view2.insert('1.0', decoder.decodeMorse(decoder, self.ent2.get('1.0', 'end-1c'), self.lang_ch.get()))
         self.text_view2.configure(state = 'disabled')
 
     def set_inactive(self):
