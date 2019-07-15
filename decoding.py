@@ -6,7 +6,7 @@ memory = Memory('cache')
 class Decoder:
 
     @memory.cache
-    def decodeMorse(self, message, lang, *args):
+    def decodeMorse(message, lang, *args):
         messageSeparated = message.split()
         DecodedMessage = ''
         

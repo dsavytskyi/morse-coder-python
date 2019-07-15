@@ -6,15 +6,6 @@ from decoding import decoder
 from encoding import encoder
 from morse_alphabet import packages
 
-
-class Prefs: #TODO
-    def __init__(self, root):
-        self.root = root
-        root.title('Preferences')
-
-    def setInterval(self):
-        pass
-
 class PlayThread (threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)   
@@ -70,17 +61,14 @@ class UI:
     def button_pressed_encode(self):
         self.text_view.configure(state = 'normal')
         self.text_view.delete('1.0', 'end-1c')
-        self.text_view.insert('1.0', encoder.encodeToMorse(encoder, self.ent1.get('1.0', 'end-1c')))
+        self.text_view.insert('1.0', encoder.encodeToMorse(self.ent1.get('1.0', 'end-1c')))
         self.text_view.configure(state = 'disabled')
-        
+
     def button_pressed_decode(self):
         self.text_view2.configure(state = 'normal')
         self.text_view2.delete('1.0', 'end-1c')
-        self.text_view2.insert('1.0', decoder.decodeMorse(decoder, self.ent2.get('1.0', 'end-1c'), self.lang_ch.get()))
+        self.text_view2.insert('1.0', decoder.decodeMorse(self.ent2.get('1.0', 'end-1c'), self.lang_ch.get()))
         self.text_view2.configure(state = 'disabled')
-
-    def set_inactive(self):
-        pass
 
     def __getPackages(self):
         lang_list = ["Pick Language"]
