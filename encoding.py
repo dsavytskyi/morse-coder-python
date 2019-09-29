@@ -1,5 +1,5 @@
 from morse_alphabet import packages
-import winsound
+#import winsound
 import time
 from joblib import Memory
 
@@ -39,6 +39,6 @@ class Encoder:
 
     def beep(self, mul):
         frequency = 1000
-        winsound.Beep(frequency, mul*self.interval)
+        #winsound.Beep(frequency, mul*self.interval)
 
 encoder = Encoder()

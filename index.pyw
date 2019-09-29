@@ -35,7 +35,7 @@ class UI:
         self.button = ttk.Button(tab_encode, text = 'Encode', command = self.button_pressed_encode)
         self.button.grid(column = 0, row = 2, padx = 5, sticky = 'w'+'e')
 
-        self.button_sd = ttk.Button(tab_encode, text = 'Play code', command = self.play_text)
+        self.button_sd = ttk.Button(tab_encode, text = 'Play code', command = self.play_text, state = 'disabled')
         self.button_sd.grid(column = 1, row = 2, padx = 5, pady = 5, sticky = 'w'+'e')
         #endregion
 
