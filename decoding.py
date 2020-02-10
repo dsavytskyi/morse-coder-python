@@ -1,12 +1,9 @@
 from morse_alphabet import packages
 from joblib import Memory
 
-memory = Memory('cache')
-
 class Decoder:
 
-    @memory.cache
-    def decodeMorse(message, lang, *args):
+    def decodeMorse(self, message, lang):
         messageSeparated = message.split()
         DecodedMessage = ''
         

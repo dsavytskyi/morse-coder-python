@@ -1,16 +1,11 @@
 from morse_alphabet import packages
-#import winsound
 import os
 import time
-from joblib import Memory
-
-memory = Memory('cache')
 
 class Encoder:
     interval = 175 
 
-    @memory.cache
-    def encodeToMorse(message, *args):
+    def encodeToMorse(self, message):
         encodedMessage = ''
         charFound = True
         for char in message[:]:
@@ -40,7 +35,6 @@ class Encoder:
 
     def beep(self, mul):
         frequency = 1000
-        #winsound.Beep(frequency, mul*self.interval)
         os.system('play -nq -t alsa synth {} sine {}'.format(mul/2, frequency))
 
 encoder = Encoder()
