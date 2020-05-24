@@ -1,5 +1,4 @@
 from morse_alphabet import packages
-from joblib import Memory
 
 class Decoder:
 
