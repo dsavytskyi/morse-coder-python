@@ -1,5 +1,7 @@
 from morse_alphabet import packages
+import platform
 import os
+import winsound
 import time
 
 class Encoder:
@@ -35,6 +37,9 @@ class Encoder:
 
     def beep(self, mul):
         frequency = 1000
-        os.system('play -nq -t alsa synth {} sine {}'.format(mul/2, frequency))
+        if platform.system() == 'Linux':
+            os.system('play -nq -t alsa synth {} sine {}'.format(mul/2, frequency))
+        elif platform.system() == 'Windows':
+            winsound.Beep(frequency, mul*self.interval)
 
 encoder = Encoder()
