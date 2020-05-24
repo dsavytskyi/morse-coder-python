@@ -43,7 +43,7 @@ class UI:
         self.ent2 = tk.Text(tab_decode, height = 10, width = 50, font=('Consolas', 11))
         self.ent2.grid(column = 0, row = 0, padx = 5, pady = 5, columnspan = 2)
 
-        self.text_view2 = tk.Text(tab_decode, heigh = 10, width = 50, font=('Consolas', 11), state = 'disabled')
+        self.text_view2 = tk.Text(tab_decode, heigh = 10, width = 50, font=('Consolas', 11))
         self.text_view2.grid(column = 0, row = 1, padx = 5, columnspan = 2)
         
         self.lang_ch = tk.StringVar(tab_decode)
