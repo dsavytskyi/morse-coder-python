@@ -3,11 +3,17 @@ import platform
 import os
 import winsound
 import time
+import rsa_module
 
 class Encoder:
     interval = 175 
 
-    def encodeToMorse(self, message):
+    def encodeToMorse(self, message, useRSA, cipher):
+        if useRSA == 1:
+            message = cipher.encrypt(message)
+            message = ''.join(hex(ord(x))[2:] for x in message)
+            print(message)
+
         encodedMessage = ''
         charFound = True
         for char in message[:]:
